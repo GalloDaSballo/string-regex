@@ -8,14 +8,14 @@ import { replaceToFile } from "./file";
 /** Run this script with yarn folder */
 
 // Set folder
-const FOLDER = "../auto-judged";
+const FOLDER_TO_COUNT = "auto-judged";
 const CSV_FOLDER = "csv-score";
 
 // Set prefix to avoid counting on stuff you didn't finish
 const PREFIX_FILTER = "DQ-";
 
 const back = resolve(__dirname);
-const path = join(back, FOLDER);
+const path = join(back, `../${FOLDER_TO_COUNT}`);
 
 const res = [];
 
@@ -34,7 +34,7 @@ readdir(path, (err, files) => {
       return;
     }
 
-    const filePath = `${FOLDER}/${file}`;
+    const filePath = `../${FOLDER_TO_COUNT}/${file}`;
     console.log("filePath", filePath);
 
     const score = countFromFileName(filePath);
