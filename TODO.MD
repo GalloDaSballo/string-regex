@@ -18,3 +18,8 @@ Add the Scoring into this
 Add a way to export as CSV and MDs - Basically DONE
 
 Attach to UI / Add the part to parse the title - PROB WILL NEVER DO / Way too much effort for saving 30seconds
+
+
+NICE TO HAVE (super low prio imo)
+EXTENSIBILITY OF SCORE AS CUSTOM ON A PER JUDGE BASIS
+SCORE EXTENSIBILITY BASED ON ERROR THRESHOLD OR CUSTOM HOOKS

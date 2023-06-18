@@ -1,33 +1,54 @@
-# Typescript Package Starter
+# Pharaoh Macros
 
-A starter template to start your package with typescript
+Fairly judge C4 Bot Reports by using Regex
 
-It uses typescript, eslint and jest
+## Features
 
-TS: Easy coding
-EsLint: Easy Formatting
-Jest: Confident Testing
-JSDoc: Free Documentation (as long as you add comments)
+Auto-Judge all duplicates
 
-## Usage
+Auto-Judge folders
 
-Use it as template
+Count scores
 
-Build your own stuff
+Count and store in CSV
 
-## Scripts
+Declare your Keys and Scores
 
-### build
-Build the package with TS
+## Workflow
 
-### test
-Run jest on your test files
+First Parse the Reports with Pharaoh (get a title and a score, on separate lines)
 
-### lint
-Lint your files
+Then use the tool
 
-### lint:fix
-Lint and fix what can be fixed
+## Commands
 
-### doc
-Generate docs with JsDoc
+All commands are bodged, you have to open each respective file and change the `CONSTANTS`
+
+```ts
+    "auto": "ts-node src/auto_judge_folder.ts",
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node src/index.ts",
+    "count": "ts-node src/count.ts",
+    "folder": "ts-node src/count_folder.ts",
+  ```
+
+
+## Start / Dev
+
+Compares one file at a time
+
+## Count
+
+Counts Results in one File
+
+## Folder
+
+Counts Results in one Folder (and stores in a csv)
+
+## Auto
+
+Given a list of reports (regex selector), applies the judging to the other reports (another regex selector)
+
+In case of multiple differente judgments it adds a TODO with all possible judging results
+
+NOTE: Conflict resolution is nunanced, you should consider whether you would want a revert (add a Throw) or if you prefer a TODO as part of your workflow
