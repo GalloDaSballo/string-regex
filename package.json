@@ -10,7 +10,10 @@
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
+    "auto": "ts-node src/auto_judge_folder.ts",
     "start": "ts-node src/index.ts",
+    "count": "ts-node src/count.ts",
+    "folder": "ts-node src/count_folder.ts",
     "dev": "ts-node src/index.ts",
     "build": "tsc",
     "test": "jest",
@@ -19,6 +22,7 @@
     "doc": "tsc && jsdoc -c ./.jsdoc.json"
   },
   "dependencies": {
+    "json-2-csv": "^4.0.0",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {

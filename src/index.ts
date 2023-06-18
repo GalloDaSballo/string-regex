@@ -1,25 +1,18 @@
-import { Product, Cart, ProductInCart } from "./types";
+import compareDataAndSaveToFile from "./compare";
+import { getData } from "./file";
 
-/**
- * Given a product, return it's price
- * @param product
- */
-export const getPrice = (product: Product): number => product.price;
+// Single File Demo
+const NEW_FILE_NAME = "get";
+const KB_NAME = "../findings/KB-SanSolBot.MD";
+const NEW_NAME = `../findings/${NEW_FILE_NAME}.MD`;
+const FINDINGS_FOLDER = "findings";
+const OUTPUT_NAME = `${NEW_FILE_NAME}.MD`;
 
-/**
- * Given a product in a cart, return it's quantity
- * @param product
- */
-export const getQuantity = (product: ProductInCart): number => product.quantity;
+if (OUTPUT_NAME.indexOf("KB") !== -1) {
+  throw Error("NOPE");
+}
 
-/**
- * Given a cart, return the total cost of the products it contains
- * @param cart
- */
-export const getTotal = (cart: Cart): number => {
-  return cart.reduce(
-    (accumulator, product) =>
-      accumulator + getPrice(product) * getQuantity(product),
-    0
-  );
-};
+const data = getData(KB_NAME);
+const newVal = getData(NEW_NAME);
+
+compareDataAndSaveToFile(data, newVal, FINDINGS_FOLDER, OUTPUT_NAME);

@@ -1,3 +1,8 @@
 /node_modules
 /lib
 /docs
+
+/auto-judged
+/findings
+/kb
+/csv-score
