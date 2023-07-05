@@ -8,7 +8,7 @@ import { replaceToFile } from "./file";
 /** Run this script with yarn folder */
 
 // Set folder
-const FOLDER_TO_COUNT = "auto-judged";
+const FOLDER_TO_COUNT = "findings";
 const CSV_FOLDER = "csv-score";
 
 // Set prefix to avoid counting on stuff you didn't finish
@@ -27,9 +27,10 @@ async function addToCSV(data) {
 
 // Read folder
 readdir(path, (err, files) => {
+  console.log("count folder path", path);
   files.forEach((file) => {
     // Read file here
-    if (file.includes(PREFIX_FILTER)) {
+    if (file.includes(PREFIX_FILTER) || file.includes("DS_Store")) {
       // Skip those
       return;
     }
