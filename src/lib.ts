@@ -71,14 +71,15 @@ export const getHeaders = (text) => {
   return filtered.map((header) => removeExtraStuffFromWord(header));
 };
 
-export const getHeadersAndScores = (text: string) => {
+export const getHeadersAndScores = (text: string, name: string) => {
   const lines = getLines(text);
   const filtered = lines.filter((s) => s.length > 0);
 
   // Assume first line is Header
   // Second line is score
   if (filtered.length % 2 !== 0) {
-    throw Error("Unbalanced Lines delete the extra lines");
+    const error = `Unbalanced Lines delete the extra lines ${name}`;
+    throw Error(error);
   }
 
   const found = {};

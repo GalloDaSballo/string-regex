@@ -14,7 +14,8 @@ const KEYS_AND_SCORES = {
   I: 0,
   // TODO: BIAS MODE, a mode where you could use some other judging to auto-judge statistically
   // SEE https://github.com/code-423n4/org/issues/103
-  TODO: 0, // TODO: remove or you will think you're done when you are not
+  TODO: 0, // TODO: remove or you will think you're done when you are not,
+  M: 8,
 };
 
 // Store all keys in an array as strings so we can find them them via `getKeyScore`
@@ -27,12 +28,14 @@ export const getKeyScore = (key: string) => {
     }
   }
 
+  console.log("key", key);
+
   throw Error(`No match for ${key}`);
 };
 
 export const countFromFileName = (fileName: string) => {
   const data = getData(fileName);
-  const headersAndScores = getHeadersAndScores(data);
+  const headersAndScores = getHeadersAndScores(data, fileName);
 
   const count = {
     score: 0,
@@ -54,4 +57,5 @@ export const countFromFileName = (fileName: string) => {
   return count;
 };
 
-console.log("Count", countFromFileName(FILE_NAME));
+// TODO: make separate
+// console.log("Count", countFromFileName(FILE_NAME));
