@@ -15,16 +15,22 @@ const LOOP = true; // Should we re-judge each report to judge against each other
 const back = resolve(__dirname);
 const kbPath = join(back, FOLDER);
 
-const TEMP_OUTPUT = "auto-judged";
+const TEMP_OUTPUT = "findings";
 
 // Read folder
 readdir(kbPath, (err, files) => {
+  console.log("kbPath", kbPath);
+  console.log("files", files);
   const kbFiles = files
     .filter((file) => file.includes(KB_FILTER))
-    .filter((file) => !file.includes(TO_SKIP_FILTER));
+    .filter((file) => !file.includes(TO_SKIP_FILTER))
+    .filter((file) => !file.includes("DS_Store"));
+
   const toJudgeFiles = files
     .filter((file) => file.includes(TO_JUDGE_FILTER))
-    .filter((file) => !file.includes(TO_SKIP_FILTER));
+    .filter((file) => !file.includes(TO_SKIP_FILTER))
+    .filter((file) => !file.includes(KB_FILTER))
+    .filter((file) => !file.includes("DS_Store"));
 
   kbFiles.forEach((kbFile) => {
     const kbFilePath = `${FOLDER}/${kbFile}`;
@@ -33,7 +39,7 @@ readdir(kbPath, (err, files) => {
       const toJudgePath = `${FOLDER}/${toJudge}`;
 
       const folder = TEMP_OUTPUT;
-      const fileName = `${toJudge}-DEMO.MD`;
+      const fileName = `${toJudge}`;
 
       compareDataAndSaveToFile(
         getData(kbFilePath),
