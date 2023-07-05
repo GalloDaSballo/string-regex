@@ -2,6 +2,12 @@
 
 Fairly judge C4 Bot Reports by using Regex
 
+SOFTWARE IS A BODGE, EXPERTS ONLY!
+
+Change `CONSTANTS` at the top of scripts to configure various settings
+
+See each file associated with a command to get started
+
 ## Features
 
 Auto-Judge all duplicates
