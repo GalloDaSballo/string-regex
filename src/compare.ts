@@ -27,10 +27,12 @@ export function compareDataAndSaveToFile(
   folder: string,
   fileName: string
 ): void {
-  const oldStuff = getHeadersAndScores(data);
-  const newStuff = getHeadersAndScores(newVal);
+  const oldStuff = getHeadersAndScores(data, fileName);
+  const newStuff = getHeadersAndScores(newVal, fileName);
   const newHeaders = Object.keys(newStuff);
   const oldHeaders = Object.keys(oldStuff);
+
+  console.log("fileName", fileName);
 
   let toWrite = ``;
 
@@ -39,6 +41,7 @@ export function compareDataAndSaveToFile(
 
     const index = oldHeaders.indexOf(header);
 
+    toWrite += `- `;
     toWrite += header;
     toWrite += `\n`;
 
