@@ -2,9 +2,10 @@ const MD_REGEXES = [
   /\(#.*-\d*\)/gi, // (#MED-012)
   /\|\d*|/gi, // Ady digit in |DIGIT|
   /\|/gi, // |
-  /\[.*\]/gi, // Stuff in square bracket
+  /\[.*\]/i, // Stuff in square bracket
   /M-\d*/, // M-
   /NC-\d*/, // NC-
+  /N-\d*/, // N-
   /L-\d*/, // L-
   /G-\d*/, // G-
   /GO-\d*/, // GO-

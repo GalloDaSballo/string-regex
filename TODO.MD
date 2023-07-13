@@ -30,3 +30,20 @@ SCORE EXTENSIBILITY BASED ON ERROR THRESHOLD OR CUSTOM HOOKS
 -> Or also have a set of keywords for each finding, that would cause them to be considered duplicates
 -> Would also require further sophistication on dedouping judgements as otherwise you will just get overwhelmed
 -> Prob best done in the UI as a secondary system that advices since it becomes "statistical"
+
+
+
+BETTER SCRAPING:
+
+Cases:
+|[L-13] Unsafe Cast Unsigned to Signed | [Unsafe Cast Unsigned to Signed](#unsafe-cast-unsigned-to-signed) | 6 |
+
+    - [\[NC-29\] Take advantage of Custom Error's return value property](#nc-29-take-advantage-of-custom-errors-return-value-property)
+TODO
+
+
+| [GAS&#x2011;28](#gas28-splitting-require-statements-that-use-&&-saves-gas) | Splitting `require()` Statements That Use `&&` Saves Gas | 22 | 198 |
+TODO
+
+MAYBE:
+Is Link ([]()) and compare the length of the string, strong length wins

@@ -29,10 +29,9 @@ export function compareDataAndSaveToFile(
 ): void {
   const oldStuff = getHeadersAndScores(data, fileName);
   const newStuff = getHeadersAndScores(newVal, fileName);
+
   const newHeaders = Object.keys(newStuff);
   const oldHeaders = Object.keys(oldStuff);
-
-  console.log("fileName", fileName);
 
   let toWrite = ``;
 
